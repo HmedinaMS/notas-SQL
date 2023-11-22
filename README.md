@@ -80,6 +80,12 @@ SELECT name, email, age FROM `my_database`;
 SELECT name, email, age FROM `my_database` WHERE email = 'john@example.com' AND age = 18;
 -- Sentencia WHERE con multiples valores
 SELECT name, email, age FROM `my_database` WHERE email IN ('john@example.com', 'john@outlook.com');
+SELECT name, email, age FROM `my_database` WHERE email = 'john@example.com'
+-- Mostrar registros usando comodines
+-- Empiezan con 'M' y luego cualesquiera caracteres
+SELECT email, age FROM `my_database` WHERE email LIKE 'M%';
+SELECT email, age FROM `my_database` WHERE email LIKE '%@gmail.com';
+SELECT email, age FROM `my_database` WHERE email NOT LIKE '%@hotmail.com';
 -- Mostrar cantidad de registros
 SELECT COUNT(*) FROM `my_database`;
 SELECT COUNT(*) AS cantidad FROM `my_database`;
