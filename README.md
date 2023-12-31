@@ -52,6 +52,18 @@ CREATE TABLE IF NOT EXISTS `my_database`.my_table(
 
 __La restricción por defecto es 'RESTRICT'__
 ![Alt text](./assets/img/image-7.png)
+CASCADE:
+
+Cuando se aplica la acción 'CASCADE' a una clave foránea, cualquier cambio realizado en la clave primaria correspondiente (la tabla principal) se reflejará automáticamente en las filas relacionadas de la tabla secundaria (aquella que contiene la clave foránea).
+Por ejemplo, si se elimina una fila en la tabla principal, todas las filas relacionadas en la tabla secundaria serán eliminadas automáticamente.
+SET DEFAULT:
+
+Cuando se utiliza la acción 'SET DEFAULT', si se actualiza o elimina una fila en la tabla principal, la columna que contiene la clave foránea en la tabla secundaria se establecerá en un valor predeterminado.
+Esto significa que si una fila en la tabla principal es modificada o eliminada y la fila correspondiente en la tabla secundaria hace referencia a esta fila modificada o eliminada, la columna que contiene la clave foránea en la tabla secundaria tomará un valor por defecto predefinido.
+SET NULL:
+
+Al emplear la acción 'SET NULL', si se actualiza o elimina una fila en la tabla principal, la columna que contiene la clave foránea en la tabla secundaria se establecerá en NULL (si la columna permite valores nulos).
+En este caso, si una fila en la tabla principal es modificada o eliminada y la fila correspondiente en la tabla secundaria hace referencia a esta fila modificada o eliminada, la columna que contiene la clave foránea en la tabla secundaria se establecerá como NULL.
 ```sql
 CREATE TABLE IF NOT EXISTS `my_database`.my_table(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
