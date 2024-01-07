@@ -168,6 +168,29 @@ SELECT * FROM `my_database` LIMIT 5, 7;
 SELECT COUNT(*) AS cantidad FROM `my_database`;
 ```
 
+- Consultas condicionales
+```sql
+-- Usando IF
+SELECT 
+    nombre,
+    edad,
+    IF(edad >= 18, 'Mayor de edad', 'Menor de edad') AS estado
+FROM 
+    usuarios;
+-- Usando CASE
+SELECT 
+    producto,
+    cantidad,
+    CASE 
+        WHEN cantidad > 10 THEN 'Stock Suficiente'
+        WHEN cantidad > 0 THEN 'Stock Limitado'
+        ELSE 'Sin Stock'
+    END AS estado_stock
+FROM 
+    inventario_productos;
+
+```
+
 - Operaciones de campos String
 ```sql
 SELECT LOWER(last_name), UPPER(description) FROM `my_database`.my_table; 
