@@ -1,4 +1,12 @@
 # Notas SQL
+
+</hr>
+
+- [Repositorio - Curso Modelado de Datos](https://github.com/jonmircha/youtube-bd.git)
+
+</hr>
+
+#### Conceptos Básicos
 - _DBeaver, SQL Server Management Studio (SSMS), MySQL Workbench se llaman software de administración de bases de datos_
 - _Las colecciones de bases de datos se llaman "Conexiones" o "Conexiones de base de datos". Estas conexiones representan los accesos a las bases de datos y servidores específicos_
 - MySQL es un servidor que se ejecuta en un host. Por este motivo, primero conectate por ssh al servidor remoto, y luego ejecutas con tus credenciales (se pide usuario y password):
