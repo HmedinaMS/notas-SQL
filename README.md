@@ -25,6 +25,26 @@ SQL es un lenguaje de programación imperativo.
 ```sql
 SHOW DATABASES;
 ```
+- Ver lista de tablas en una base de datos
+```sql
+SELECT COUNT(*) AS 'Cantidad de tablas'
+FROM information_schema.tables
+WHERE table_schema = 'nombre_de_tu_base_de_datos';
+```
+- Obtener una lista de las tablas que tienen al menos un registro
+```sql
+SELECT TABLE_NAME
+FROM information_schema.tables
+WHERE table_schema = 'nombre_de_tu_base_de_datos'
+AND TABLE_ROWS > 0;
+```
+- Obtener una lista de las tablas que tienen al menos un registro
+```sql
+SELECT COUNT(*) AS 'Cantidad de tablas'
+FROM information_schema.tables
+WHERE table_schema = 'nombre_de_tu_base_de_datos'
+AND TABLE_ROWS > 0;
+```
 - Ver lista de índices de una tabla
 ```sql
 SHOW INDEX FROM `my_database`.my_table;
