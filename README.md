@@ -45,6 +45,20 @@ FROM information_schema.tables
 WHERE table_schema = 'nombre_de_tu_base_de_datos'
 AND TABLE_ROWS > 0;
 ```
+- Obtener lista de tablas con relaciones entre ellas
+```sql
+SELECT
+    tablas_con_claves_foraneas.TABLE_NAME AS Tabla_Actual,
+    tablas_con_claves_foraneas.CONSTRAINT_NAME AS Nombre_Constraint,
+    tablas_con_claves_foraneas.COLUMN_NAME AS Columna_Constraint,
+    tablas_con_claves_foraneas.REFERENCED_TABLE_NAME AS Tabla_Referenciada,
+    tablas_con_claves_foraneas.REFERENCED_COLUMN_NAME AS Columna_Referenciada
+FROM
+    information_schema.KEY_COLUMN_USAGE AS tablas_con_claves_foraneas
+WHERE
+    tablas_con_claves_foraneas.TABLE_SCHEMA = 'nombre_de_tu_base_de_datos'
+    AND tablas_con_claves_foraneas.REFERENCED_TABLE_NAME IS NOT NULL;
+```
 - Ver lista de índices de una tabla
 ```sql
 SHOW INDEX FROM `my_database`.my_table;
